@@ -457,7 +457,7 @@
     submit.disabled=true;submit.textContent='저장 중…';
     const payload={name,phone:raw,consent:true,submission_id:state.submissionId,event:'SAWLIB TALKS 문화번역 게임',user_agent:navigator.userAgent.slice(0,500)};
     try{
-      const res=await fetch(`${base}/rest/v1/sawlib_talks_entries`,{
+      const res=await fetch(`${base}/rest/v1/entries`,{
         method:'POST',
         headers:{'Content-Type':'application/json','apikey':key,'Prefer':'return=minimal'},
         body:JSON.stringify(payload)

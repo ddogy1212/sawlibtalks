@@ -1,14 +1,14 @@
 # SAWLIB TALKS 문화번역 게임 — GitHub Pages 최종본
 
 이 폴더를 GitHub 저장소의 루트에 그대로 업로드하면 됩니다.
-별도의 Google Sheet / Apps Script 연결은 필요하지 않습니다.
+별도의 Supabase / Apps Script 연결은 필요하지 않습니다.
 
 ## 이번 수정
 - 프랑스 라운드의 나무를 인물 뒤쪽 레이어로 배치해 사람을 가리지 않도록 수정
 - 빛나는 돌은 매 게임 시작/초기화 때마다 **세 나무 중 무작위 한 나무 아래**에 숨겨짐
 - 러시아 치과 라운드에서 조작할 주인공 위에 **‘나’** 표시 추가
 - 주인공을 치료실 문 앞의 넓은 범위에 대충 놓아도 성공하도록 판정 범위 확대
-- 응모 정보는 이미 연결된 Supabase의 `sawlib_talks_entries` 테이블에 저장됨
+- 응모 정보는 이미 연결된 Supabase의 `entries` 테이블에 저장됨
 - 공개 GitHub 코드에는 응모자의 이름/전화번호가 기록되지 않음
 - 데이터베이스는 익명 사용자의 INSERT만 허용하고 SELECT/UPDATE/DELETE는 허용하지 않도록 RLS 적용
 
@@ -32,10 +32,10 @@
 - 브라우저 정보
 
 현재 저장 위치:
-- Supabase 프로젝트: `orbit-keepsake-print`
-- 테이블: `public.sawlib_talks_entries`
+- Supabase 프로젝트: `sawlib-talks-game`
+- 테이블: `public.entries`
 
-Supabase 대시보드의 **Table Editor → sawlib_talks_entries**에서 응모 목록을 확인할 수 있습니다.
+Supabase 대시보드의 **Table Editor → entries**에서 응모 목록을 확인할 수 있습니다.
 
 ### 개인정보 주의
 이름과 전화번호는 행사 추첨 및 당첨자 연락 목적으로만 사용하고, 행사 종료 후 삭제하세요.
@@ -48,3 +48,7 @@ Supabase 대시보드의 **Table Editor → sawlib_talks_entries**에서 응모 
 4. Supabase Table Editor에서 새 행이 생겼는지 확인합니다.
 
 한 브라우저에서는 중복 응모를 막도록 되어 있습니다.
+
+
+## 응모 데이터 확인
+Supabase Dashboard에서 `sawlib-talks-game` 프로젝트를 열고 **Table Editor → entries** 로 들어가면 이름, 전화번호, 제출 시간이 저장됩니다.
